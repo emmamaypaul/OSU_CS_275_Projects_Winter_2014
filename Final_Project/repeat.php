@@ -32,7 +32,7 @@ $runName = $_POST['runName'];
 ini_set('display_errors', 'On');//checks errors
 
 //new instance of mysqli class giving host name, database name, user name, and password 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXXXXXX","pauli-db");
 	if(!$mysqli || $mysqli->connect_errno) //if if mysqli doesn't exist or if there is a connection error
 	{ 
 		echo "Connection error ".$mysqli->connect_errno. " " .$mysqli->connect_error;
@@ -147,7 +147,7 @@ if(isset($_POST["liftName"]) && !empty($_POST["liftName"]) && isset($_POST["reso
 	
 //newest attempt using http://php.net/manual/en/mysqli-result.fetch-assoc.php
 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXXXXXX","pauli-db");
 
 if (mysqli_connect_errno())
 {
@@ -162,7 +162,7 @@ if($result = $mysqli->query($liftQuery))
 ini_set('display_errors', 'On');//checks errors
 
 //new instance of mysqli class giving host name, database name, user name, and password 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXXXXXX","pauli-db");
 	if(!$mysqli || $mysqli->connect_errno) //if if mysqli doesn't exist or if there is a connection error
 	{ 
 		echo "Connection error ".$mysqli->connect_errno. " " .$mysqli->connect_error;
