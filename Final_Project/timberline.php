@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 'On'); //error report
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db"); //Connects to the database
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXX","pauli-db"); //Connects to the database
 if($mysqli->connect_errno)
 {
 	echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
