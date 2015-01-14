@@ -22,7 +22,7 @@ if(isset($_POST['liftNames'])&& !empty($_POST["liftNames"]) && isset($_POST['ski
 		GROUP BY runs.name");
 }
 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXX","pauli-db");
 
 if (mysqli_connect_errno())
 {
