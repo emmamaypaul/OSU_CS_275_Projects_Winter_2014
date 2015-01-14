@@ -27,7 +27,7 @@ WHERE resort.rid = '$resort'");
 
 }
 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXXXXXX,"pauli-db");
 
 if (mysqli_connect_errno())
 {
