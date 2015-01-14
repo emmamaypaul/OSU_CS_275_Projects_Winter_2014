@@ -23,7 +23,7 @@ if(isset($_POST['skillList']))
 
 //newest attempt using http://php.net/manual/en/mysqli-result.fetch-assoc.php
 
-$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","XXXXXXXXXXXXX","pauli-db");
 
 if (mysqli_connect_errno())
 {
