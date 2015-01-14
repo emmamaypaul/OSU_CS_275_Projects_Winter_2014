@@ -1,0 +1,16 @@
+#daySki
+{
+float: left;
+width: 460px;
+border: 1px solid black;
+
+}
+
+
+#nightSki
+{
+float: right;
+width: 460px;
+border: 1px solid black;
+
+}

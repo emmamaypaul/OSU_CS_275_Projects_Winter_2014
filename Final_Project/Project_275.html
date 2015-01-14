@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="http://web.engr.oregonstate.edu/~paule/CS%20275/275_Final.css" />
+</head>
+<body>
+
+<h3>Please choose a Resort to learn more info: </h3>
+<div id="resortInfo">
+<h3>If you'd like to add data to the Mt. Hood Database, please click the link below</h3>
+<form action="http://web.engr.oregonstate.edu/~paule/CS%20275/insertData.html" method="POST">
+<div id="meadows"><input type="submit" value="Mt. Hood Meadows"></div>
+</form>
+<form action="http://web.engr.oregonstate.edu/~paule/CS%20275/insertData.html" method="POST">
+<div id="timberline"><input type="submit" value="Timberline"></div>
+</form>
+<form action="http://web.engr.oregonstate.edu/~paule/CS%20275/insertData.html" method="POST">
+<div id="skiBowl"><input type="submit" value="Ski Bowl"></div>
+</form>
+
+<br><br>
+<div id="insertData">
+<h3>If you'd like to add data to the Mt. Hood Database, please click the link below</h3>
+<form action="http://web.engr.oregonstate.edu/~paule/CS%20275/insertData.html" method="POST">
+<div><input type="submit" value="Add Data"></div>
+</form>
+
+<div style="text-align:center;"><h2><label>Please choose your personal ski or snowboarding skill level:</label></h2></div>
+
+
+
+<form method="POST" action="http://web.engr.oregonstate.edu/~paule/CS%20275/skillLevel.php">
+<div id="daySki">
+<h3>Day Skiing Info: </h3>
+<select name="skillList"> //drop down menu, "skillList" is object name 
+
+
+<div>
+<form>
+<fieldset>
+<legend>Resort</legend>
+<select name="SkillList:">
+
+
+<?php
+ini_set('display_errors', 'On');//checks errors
+
+//new instance of mysqli class giving host name, database name, user name, and password 
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","pauli-db","ShhOnXOEe6IVSHUB","pauli-db");
+	if(!$mysqli || $mysqli->connect_errno) //if if mysqli doesn't exist or if there is a connection error
+	{ 
+		echo "Connection error ".$mysqli->connect_errno. " " .$mysqli->connect_error;
+	}
+	else 
+	{
+		echo "Connection success. Table was successfully created.";
+	}
+
+	if(!($stmt = $mysqli->prepare("SELECT rid, name FROM resort")))
+		echo "Preparation failed: (".$mysqli->errno.") ".$msqli->error;
+
+	if(!$stmt->execute())	
+		echo "Execution failed: (".$mysqli->errno.") ".$mysqli->error;
+	
+	if(!$stmt->bind_result($rid, $name)){
+		echo "Bind failed: (".$mysqli->errno.") ".$mysqli->error;
+		
+	while($stmt->fetch()){
+		echo '<option value=" '. $rid. ' "> ' . $name . '</option>\n';
+	}
+	$stmt->close();
+?>
+</select>
+</fieldset>
+<p><input type="submit" value="Submit"/></p>
+</form>
+</div>
+<input type="submit" value="Submit" name="submit_btn"/>
+</div>
+</form>
+
+<form method="POST" action="http://web.engr.oregonstate.edu/~paule/CS%20275/skillLevel.php">
+<div id="nightSki">
+<h3>Night Skiing Info: </h3>
+<select name="skillList"> //drop down menu, "skillList" is object name 
+	<option value="beginner">Beginner</option>
+	<option value="intermediate">Intermediate</option>
+	<option value="expert">Expert</option>
+</select>
+<input type="submit" value="Submit" name="submit_btn"/>
+</div>
+</form>
+
+
+
+
+
+</body>
+</html> 
